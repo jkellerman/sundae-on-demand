@@ -4,7 +4,6 @@ import userEvent from "@testing-library/user-event";
 
 test("Initial conditions", () => {
   render(<SummaryForm />);
-
   const checkbox = screen.getByRole("checkbox", {
     name: /terms and conditions/i,
   });
@@ -12,13 +11,12 @@ test("Initial conditions", () => {
 
   const confirmButton = screen.getByRole("button", { name: /confirm order/i });
   expect(confirmButton).toBeDisabled();
-  // checking checkbox enables button
 });
 
-test("Checkbox disables button on first click and enables on second click", async () => {
+test("Checkbox enables button on first click and disables on second click", async () => {
   const user = userEvent.setup();
-  render(<SummaryForm />);
 
+  render(<SummaryForm />);
   const checkbox = screen.getByRole("checkbox", {
     name: /terms and conditions/i,
   });
@@ -26,12 +24,12 @@ test("Checkbox disables button on first click and enables on second click", asyn
 
   await user.click(checkbox);
   expect(confirmButton).toBeEnabled();
-  // Unchecking checkbox again disables button
+
   await user.click(checkbox);
   expect(confirmButton).toBeDisabled();
 });
 
-test("Popover responds to hover", async () => {
+test("popover responds to hover", async () => {
   const user = userEvent.setup();
   render(<SummaryForm />);
 
