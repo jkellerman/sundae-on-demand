@@ -26,6 +26,6 @@ test("displays image for topping option from server", async () => {
   expect(altText).toEqual([
     "Cherries topping",
     "M&Ms topping",
-    "Hotfudge topping",
+    "Hot fudge topping",
   ]);
 });
