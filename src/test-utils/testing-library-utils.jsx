@@ -1,3 +1,5 @@
+// Redine testing library render to access it universally
+
 import { render } from "@testing-library/react";
 import { OrderDetailsProvider } from "../contexts/OrderDetails";
 
